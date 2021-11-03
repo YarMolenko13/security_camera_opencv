@@ -1,7 +1,9 @@
 # Security camera project opencv python
 
-## Run 
-> python main.py 
+## Run
+1. pip install -r requirements.txt 
+2. turn on webcam or connect camera
+2. python main.py 
 
 ## Flags
 > ### Face elipse highlighting
@@ -21,6 +23,6 @@
 #
 
 ## Requirements
-* python-opencv
+* python-opencv 4.5.2.54
 * numpy
 * python 3.7 > 
