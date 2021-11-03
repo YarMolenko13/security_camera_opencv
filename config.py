@@ -3,6 +3,7 @@ import argparse
 
 FACE_CASCADE_NAME = 'haarcascade_frontalface_alt.xml'
 EYES_CASCADE_NAME = 'haarcascade_eye_tree_eyeglasses.xml'
+SECONDS_TO_RECORD_AFTER_DETECTION = 6
 
 FACE_HIGHLIGHT_COLOR: tuple
 FACE_IS_ELIPSE: bool
