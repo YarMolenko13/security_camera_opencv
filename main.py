@@ -1,5 +1,3 @@
-# TODO: color console, help in console, args
-
 import numpy as np 
 import datetime
 import time
@@ -17,7 +15,7 @@ capture = cv2.VideoCapture(0)
 frame_size = (int(capture.get(3)), int(capture.get(4)))
 fourcc = cv2.VideoWriter_fourcc(*'mp4v')
 
-stopped_time = None
+stopped_time = time.time()
 is_recording = False
 
 while True:

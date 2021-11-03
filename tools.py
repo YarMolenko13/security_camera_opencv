@@ -1,4 +1,14 @@
 import config as cfg
+import datetime
+
+
+def put_date(cv2, frame, count):
+	height = frame.shape[0]
+	current_time = datetime.datetime.now().strftime("%d-%m-%Y %H:%M:%S")
+	font = cv2.FONT_HERSHEY_SIMPLEX
+	frame = cv2.putText(frame, current_time, (15,  height - 20), font, 0.7, cfg.TEXT_COLOR, 1, cv2.LINE_AA)
+	frame = cv2.putText(frame, f'Count: {count}', (15, height - 45), font, 0.7, cfg.TEXT_COLOR, 1, cv2.LINE_AA)
+	return frame
 
 def get_cascades(cv2):
 	f = cv2.CascadeClassifier(cv2.data.haarcascades + cfg.FACE_CASCADE_NAME)
@@ -33,6 +43,8 @@ def get_detected_and_highlighted(cv2, frame):
 		if cfg.EYES_HIGHLIGHT:
 			for (x_, y_, h_, w_) in eyes:
 				_, frame = highlight_eyes(cv2, frame, (x, y), x_, y_, h_, w_)
+
+	frame = put_date(cv2, frame, len(faces))
 
 	return (is_detected, frame)
 
